@@ -1,0 +1,34 @@
+    Student-DataFrame-Using-Pandas
+
+import pandas as pd
+data = {
+    "StudentID": [101,102,103,104,105,106,107,108,109,110],
+    "Name": ["Alice","Bob","Charlie","Diana","Ethan","Fiona","George","Hannah","Ivan","Julia"],
+    "Age": [20,21,19,22,20,21,23,19,22,20],
+    "Marks": [88,75,92,65,78,85,70,95,60,80],
+    "Grade": ["A","B","A","C","B","A","B","A","C","B"]
+}
+
+df = pd.DataFrame(data)
+
+print("Student DataFrame:")
+print(df)
+df.to_csv("students.csv", index=False)
+
+print("DataFrame saved as students.csv")
+df_new = pd.read_csv("students.csv")
+
+print("Reloaded DataFrame:")
+print(df_new)
+print("First 3 rows:")
+print(df_new.head(3))
+print("Statistical Summary:")
+print(df_new.describe())
+print("Shape of DataFrame:")
+print(df_new.shape)
+
+print("\nData Types:")
+print(df_new.dtypes)
+
+print("\nDataFrame Info:")
+df_new.info()
